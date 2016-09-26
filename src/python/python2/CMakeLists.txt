@@ -7,8 +7,8 @@ if (PYTHON2_LIBRARY)
     swig_add_module (python2-mraa python mraa2.i ../mraapy.c)
     swig_link_libraries (python2-mraa ${PYTHON2_LIBRARIES} mraa)
     
-    target_include_directories(${SWIG_MODULE_python2-mraa_REAL_NAME}
-      PUBLIC
+    set_property(TARGET ${SWIG_MODULE_python2-mraa_REAL_NAME}
+      APPEND PROPERTY INCLUDE_DIRECTORIES
       "${CMAKE_CURRENT_SOURCE_DIR}/../.."
       "${PYTHON2_INCLUDE_DIR}"
     )
